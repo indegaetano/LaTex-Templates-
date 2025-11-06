@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{fancybox} 
+
+\usepackage{array}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsfonts,amssymb,amsmath, amsthm}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usepackage{tikz}
+\usepackage{multicol}
+
+\usepackage[most]{tcolorbox} % for flexible boxed environments
+\setlength{\droptitle}{-7em}
+\title{Group Quiz  \\  %% Enter quiz number here 
+COURSE SECTION} %% Enter Class here 
+\date{November 4, 2025} %% Enter date 
+\author{Prof. X} %% Professor Name 
+\begin{document}
+
+\maketitle
+
+\textbf{Full Name :  \underline{\hspace{4in}}} \hfill \\
+
+\textbf{Student's Group Number: \underline{\hspace{1in}}}\hfill \\ 
+
+\textbf{FINAL GRADE: \underline{\hspace{1in}}}
+
+\vspace{.5cm}
+\textbf{Grade Breakdown:}
+\begin{center} 
+\renewcommand{\arraystretch}{1.4} % spacing
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Section} & \textbf{Points Possible} & \textbf{Points Earned Individually } &\textbf{Group Score} \\
+    \hline
+    1 & X &  & \\
+    \hline
+    2 & X &  & \\
+    \hline
+    3 & X & & \\
+    \hline
+    %% Can Copy and add more sections for the grading by using the following code: 
+    % 3 & 25 & & \\
+    % \hline
+
+    
+    \hline 
+
+ 
+    \textbf{Total} & \textbf{100} &  & \\
+    \hline 
+    
+\end{tabular}
+\end{center} 
+
+%% Feel free to edit the instructions or add more content to the instructions 
+
+\begin{tcolorbox}[colback=white, colframe=black, title= Quiz Instructions] 
+
+\begin{itemize}
+    \item \textbf{Time Limit}: You will have \underline{50 minutes} to complete this quiz.
+    \item \textbf{Allowed Materials}: Only pencils/pens, erasers, and blank scratch paper are permitted. 
+    A basic calculator is permitted. No phones, or electronic devices are allowed, failure to put away will result in a 0\% score.
+    \item \textbf{Show Your Work}: For full credit, clearly show all steps of your solutions. 
+    Answers without work may receive little or no credit.
+    \item \textbf{Clarity}: Write neatly and organize your work. 
+    If your answer cannot be read, it cannot be graded.
+    
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black, title=Disclaimers]
+\begin{itemize}
+    \item \textbf{Academic Integrity}: Cheating from AI and any kinds of problem solving software, or use of unauthorized materials will result in disciplinary action. All phones and devices must be secured in a bag before starting the quiz. This includes any kind of smart watches. 
+    \item \textbf{No Regrades Without Work}: Questions left blank or with only a final answer (no steps) are not eligible for regrading requests.
+    \item \textbf{Submission Policy}: Once the quiz is submitted or time is up, no further changes may be made.
+    \item \textbf{Leaving Policy}: Any student to leave the room during the quiz has forfeited the rest of their time and is indication that they are finished. No bathroom breaks are allowed, unless otherwise noted. If there is an emergency, students must hand in their phone or insure that it is left in their backpack, and then are permitted to use the bathroom.  
+\end{itemize}
+\end{tcolorbox}
+\newpage 
+
+%%%%%%%%%%% Quiz Content %%%%%%%%%%%% 
+
+\section*{Section One [(\#\# here) Points]}
+Add some instructions here, \textbf{add some bold text}, or add some more text here. Multiple choice questions with equations. 
+
+\begin{multicols}{3} % the 3 controls the columns amount 
+\begin{enumerate}
+    \item add a fraction $\dfrac{x}{y}$
+    \item add another equation
+    \item $\cdots$
+    \item $\cdots$
+    \item $x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}$
+    
+\end{enumerate}
+ 
+\end{multicols}
+
+\subsection*{Problem \# \underline{\hspace{0.5in}} [Score:\underline{\hspace{0.5in}}]}
+\vspace{\stretch{1}}
+
+\subsection*{Problem \# \underline{\hspace{0.5in}} [Score:\underline{\hspace{0.5in}}]}
+\vspace{\stretch{1}}
+\subsection*{Problem \# \underline{\hspace{0.5in}} [Score:\underline{\hspace{0.5in}}]}
+\vspace{\stretch{1}}
+\subsection*{Problem \# \underline{\hspace{0.5in}} [Score:\underline{\hspace{0.5in}}]}
+\vspace{\stretch{1}}
+\subsection*{Problem \# \underline{\hspace{0.5in}} [Score:\underline{\hspace{0.5in}}]}
+\vspace{\stretch{1}}
+
+
+
+
+\newpage 
+
+\subsection*{Problem X: Score\underline{\hspace{0.5in}}[X Points]}
+Add some graphs!! 
+
+
+\begin{centering}
+\noindent
+\begin{minipage}[t]{0.62\textwidth}
+    \centering
+    \textbf{Equation here!!}
+    \vspace{0.5em}
+
+    \begin{tikzpicture}[scale=0.7]
+        % Draw grid
+        \draw[step=1cm,gray,very thin] (-5,-5) grid (5,5);
+
+        % x and y axes
+        \draw[thick,->] (-5,0) -- (5.5,0) node[right] {$x$};
+        \draw[thick,->] (0,-5) -- (0,5.5) node[above] {$y$};
+
+        % Tick marks with labels explicitly listed (skip 0)
+        \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+        {
+            \draw (\x,0.08) -- (\x,-0.08) node[below=4pt] {\small \x};
+        }
+
+        \foreach \y in {-5,-4,-3,-2,-1,1,2,3,4,5}
+        {
+            \draw (0.08,\y) -- (-0.08,\y) node[left=4pt] {\small \y};
+        }
+
+        % (Optional) Example line - uncomment to show y = x + 1
+        % \draw[red,thick,domain=-5:5] plot(\x,{\x+1});
+
+        % Make sure origin tick exists visually but no "0" label was placed above.
+        % (If you want to hide the small tick at origin, comment out the next two lines)
+        % \draw (0,0.08) -- (0,-0.08); % small origin tick (no label)
+    \end{tikzpicture}
+\end{minipage}%
+\hfill
+\end{centering}
+\vspace{\stretch{1}}
+
+
+\newpage 
+\subsection*{Problem X: Score\underline{\hspace{0.5in}}[X Points]}
+Add some more questions, \\ %% New line 
+
+1. What is the shape of the curve that you sketched in the previous question called? 
+\vspace{\stretch{1}}
+
+2. What is the vertex of the graph in question 14? 
+\vspace{\stretch{1}}
+
+
+\subsection*{Add some extra credit questions!! }
+
+Graph $y=2(x-1)^2+2$ 
+
+\vspace{\stretch{1}}
+
+\end{document}
