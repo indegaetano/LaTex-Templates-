@@ -1,0 +1,159 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage{amsfonts,amssymb,amsmath, amsthm}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[left=1cm, right=1cm, top=1.5cm, bottom=1cm]{geometry}
+
+\usepackage{array}
+\usepackage{booktabs}
+\newtheorem{definition}{Definition}
+
+
+\pagestyle{headandfoot}
+
+\firstpageheader{\textbf{Cryptography Formula Sheet}}{}{}
+%\firstpageheadrule
+
+
+
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+
+\begin{document}
+
+\begin{multicols}{2} % Creates a two-column layout
+\subsection*{Plain Text Letters: }
+\begin{center}
+\begin{tabular}{||c c c c c c c c||} 
+ \hline
+ A & B & C & D & E & F & G & H  \\ [2ex] 
+ \hline
+ 00 & 01 & 02 & 03 & 04 & 05 & 06 & 07  \\ [2ex] 
+ \hline \hline
+ I & J & K & L & M & N & O & P  \\ [2ex] 
+ \hline
+ 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15  \\ [2ex] 
+ \hline \hline
+ Q & R & S & T & U & V & W & X  \\ [2ex] 
+ \hline
+ 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23  \\ [2ex] 
+ 
+ \hline \hline 
+  Y & Z & \quad & \quad   &\quad  & \quad & \quad  &  \quad  \\ [2ex] 
+ \hline
+ 24 & 25 & \quad  & \quad  & \quad  &  &  &   \\ [2ex] 
+ \hline 
+
+\end{tabular}
+\end{center}
+
+\subsection*{Binary Conversion for Letters}
+\begin{center}
+\begin{tabular}{||c c c c c||} 
+ \hline
+ A & B & C & D & E  \\ [0.5ex] 
+ \hline
+ 00000 & 00001 & 00010 & 00011 & 00100  \\ 
+ \hline \hline
+ F & G & H & I & J   \\ [0.5ex] 
+ \hline
+ 00101 & 00110 & 00111 & 01000 & 01001  \\ 
+ \hline \hline 
+ K & L & M & N & O \\[0.5ex] 
+ \hline
+ 01010 & 01011 & 01100 & 01101 & 01110 \\
+ \hline \hline
+ P & Q & R & S & T   \\ [0.5ex] 
+ \hline
+ 01111 & 10000 & 10001 & 10010 & 10011 \\ 
+ \hline \hline 
+ U & V & W & X & Y \\ [0.5ex] 
+ \hline 
+10100 & 10101 & 10110 & 10111  & 11000 \\
+ \hline \hline 
+ Z & & & & \\ [0.5ex] 
+ \hline
+ 11001 & & & &\\ 
+ \hline 
+
+\end{tabular}
+\end{center}
+\end{multicols}
+
+
+
+\subsection*{RSA Recovery Exponent:}
+Given a key $(n,k)$ we have a recovery exponent $j$ such that $\exists ! \quad j \in \mathbb{Z}$ s.t. 
+\begin{equation} \notag 
+    kj\equiv 1 \mod (\phi(n)).
+\end{equation}
+
+\subsection*{Phi Function}
+Formulas for $\phi(n), n\in \mathbb{Z}$. 
+$$\phi(n) \quad \text{If n is a prime then, } \phi(n)=n-1.$$
+If n is not prime then we factor so that n is in its reduced prime factorization form and use, 
+$$\phi(n)=\phi(p_1p_2)= \phi(p_1)\phi(p_2) $$
+
+
+\subsection*{Euclidean Algorithm}
+\begin{align*}
+a &= q_1 b + r_1 \quad & \text{where } 0 \le r_1 < b \\
+b &= q_2 r_1 + r_2 \quad & \text{where } 0 \le r_2 < r_1 \\
+r_1 &= q_3 r_2 + r_3 \quad & \text{where } 0 \le r_3 < r_2 \\
+&\vdots \\
+r_{k-2} &= q_k r_{k-1} + r_k \quad & \text{where } 0 \le r_k < r_{k-1} \\
+r_{k-1} &= q_{k+1} r_k + 0
+\end{align*}
+
+\subsection*{Caesar Cipher}
+$$(x+3)\mod 26$$
+
+\subsection*{Vigenere Encryption}
+$C \equiv x+$ corresponding keyword letter $\mod 26$
+\subsection*{Vigenere Decryption}
+$x \equiv C-$ corresponding keyword letter $\mod 26$
+
+\subsection*{Elgamal Encryption}
+Encipher: Public key $(p,r,a)$; private key $k$, random integer $j$ \\ 
+Find $r^j\mod p$ and $a^j\mod p$ \\ 
+$a^j = y \mod p \to $ encipher text
+
+\subsection*{Knapsack Encryption}
+Modulus $= m$, multiplier $=a$, private sequence $=ps$, Public key is a string of all the super-increasing numbers multiplied by the $a$ and then $\mod m$. \\ 
+Encryption: message to binary, and each bit with the corresponding sequence with private key.  
+
+\subsection*{Primitive Roots}
+A number $g$ is called a \textbf{primitive root modulo $n$} if the smallest positive integer $k$ such that
+\[
+g^k \equiv 1 \pmod{n}
+\]
+is $k = \phi(n)$, where $\phi(n)$ is Euler's Phi function. 
+
+Equivalently, $g$ is a primitive root modulo $n$ if the powers
+\[
+g,\, g^2,\, g^3,\, \dots,\, g^{\phi(n)}
+\]
+produce all integers relatively prime to $n$ modulo $n$.
+
+\subsection*{Order Modulo n}
+Let $a$ and $n$ be integers with $\gcd(a, n) = 1$. 
+The \textbf{order of $a$ modulo $n$}, denoted by $\operatorname{ord}_n(a)$, 
+is the smallest positive integer $k$ such that
+\[
+a^k \equiv 1 \pmod{n}.
+\]
+If no such integer $k$ exists, then $a$ is said to have no order modulo $n$.
+
+
+
+\end{document}
